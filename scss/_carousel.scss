@@ -1,0 +1,64 @@
+.cover {
+    height: 500px;
+}
+.notion-carousel {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+
+    &__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        color: $primary-color;
+
+        *:nth-child(1) {
+            margin-bottom: 20px;
+        }
+        *:nth-child(2) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__item:not(.active) {
+        left: 100%;
+    }
+
+    &__navigator {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        .wrapper.container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+
+            .indicator {
+                display: flex;
+
+                div {
+                    width: 25px;
+                    height: 3px;
+                    background-color: $text-secondary;
+
+                    &:not(:last-child) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 3px;
+            }
+        }
+    }
+}

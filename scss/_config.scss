@@ -1,0 +1,39 @@
+$primary-color: #fff;
+$secondary-color: #0065f2;
+
+$text-primary: #fff;
+$text-secondary: #999;
+
+@mixin transition-linear {
+    transition: 0.3s all linear;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin media-sm {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}

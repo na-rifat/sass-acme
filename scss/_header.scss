@@ -1,0 +1,16 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0 0 3px #ccc;
+    overflow: hidden;
+    padding: 0 2rem;
+    .nav__menu{
+        display: none;
+    }
+    &__action-button span{
+        display: none;
+    }
+}
