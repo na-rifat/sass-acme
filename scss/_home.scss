@@ -28,17 +28,18 @@
     }
 }
 .img-frame {
+    overflow: hidden;
     &__img1 {
         margin-left: 56.17px;
-
         display: inline-block;
-        img {
-            width: 248.83px;
-            height: 293.96px;
-        }
+        height: 293.96px;
+        width: auto;
     }
     &__img2 {
-        margin-top: -41.17px;
+        margin-top: calc(-100% + 150px);
+        width: 182.59px;
+        height: 166.02px;
+        margin-bottom: 20px;
     }
     img {
         width: auto;
@@ -72,6 +73,112 @@
     &__chart {
         img {
             width: 100%;
+        }
+    }
+}
+
+// Pricing section
+.pricing {
+    margin: 40px 0;
+    &__tagline {
+        text-align: center;
+    }
+
+    &__headline {
+        text-align: center;
+    }
+
+    &__tabtool {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            padding: 10px;
+            &.active {
+                border-bottom: 2px solid $secondary-color;
+                color: $secondary-color;
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &__tabpage:not(.active) {
+        display: none;
+    }
+
+    &__card {
+        padding: 24px;
+        margin: 20px 0;
+        height: 558px;
+        display: flex;
+        flex-flow: column;
+        @include border-shadow;
+
+        > *:not(:last-child) {
+            margin: 8px 0;
+        }
+        &-type {
+            font-size: 18px;
+            text-align: right;
+            margin-bottom: 38px;
+        }
+        &-divider {
+            border-bottom: 1px solid $text-secondary;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        &-price {
+            font-size: 56px;
+            margin-bottom: 24px;
+            span {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        &-description {
+            text-align: left;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            p {
+                margin-bottom: 16px;
+            }
+            ul {
+                margin-left: 1rem;
+            }
+        }
+
+        &-action {
+            margin-bottom: 0px;
+            margin-top: auto;
+        }
+    }
+}
+
+// Accordion
+.accordions_section {
+    .accordions {
+        &_key {
+            height: 61px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        &_accordion {
+            @include border-shadow;
+            margin: 20px 0;
+        }
+        &_body {
+            padding: 12px 15px;
         }
     }
 }
