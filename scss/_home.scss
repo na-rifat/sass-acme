@@ -69,5 +69,9 @@
     }
 }
 .content4 {
-    @extend .content3;
+    &__chart {
+        img {
+            width: 100%;
+        }
+    }
 }
