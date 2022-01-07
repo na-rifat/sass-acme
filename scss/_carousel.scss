@@ -6,6 +6,7 @@
     display: flex;
     overflow: hidden;
     height: 100%;
+    margin-left: -1px;
 
     &__item {
         position: absolute;
@@ -41,6 +42,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
+        z-index: 999;
 
         .wrapper.container {
             display: flex;
@@ -54,9 +56,13 @@
                     width: 25px;
                     height: 3px;
                     background-color: $text-secondary;
+                    @include transition-linear;
 
                     &:not(:last-child) {
                         margin-right: 5px;
+                    }
+                    &.active{
+                        background-color: $secondary-color;
                     }
                 }
             }
@@ -64,7 +70,11 @@
             .buttons {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-gap: 3px;
+                grid-gap: 10px;
+                img{
+                    height: 30px;
+                    width: 30px;
+                }
             }
         }
     }

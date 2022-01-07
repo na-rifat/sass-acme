@@ -2,9 +2,15 @@
 .brands {
     // padding: 2rem 1.5rem;
 
+    > * {
+        margin: 2rem 0;
+    }
+
     &__header {
         text-align: center;
         color: $text-secondary;
+        font-size: 1rem;
+        font-weight: 400;
     }
 
     &__list {
@@ -12,7 +18,10 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
         align-items: center;
-        margin: 2rem 1rem;
+        img {
+            height: 100%;
+            width: auto;
+        }
     }
 
     &__brand {
@@ -49,20 +58,26 @@
 
 // Video section + Content
 .content2 {
+    @include section-gap;
     &__video {
         img {
             width: 100%;
         }
 
         &__caption {
-            padding: 0 3rem;
+            padding: 0 5%;
             text-align: center;
         }
+    }
+
+    > * {
+        margin: 15px 0;
     }
 }
 
 // Chart section + Content
 .content3 {
+    @include section-gap;
     &__chart {
         img {
             width: 100%;
@@ -79,7 +94,7 @@
 
 // Pricing section
 .pricing {
-    margin: 40px 0;
+    @include section-gap;
     &__tagline {
         text-align: center;
     }
@@ -94,7 +109,11 @@
         align-items: center;
 
         div {
+            @include transition-linear;
             padding: 10px;
+            border: 2px solid white;
+            color: $text-secondary;
+            font-size: 16px;
             &.active {
                 border-bottom: 2px solid $secondary-color;
                 color: $secondary-color;
@@ -158,6 +177,12 @@
             margin-top: auto;
         }
     }
+    &__tab {
+        padding-top: 42px;
+    }
+    > * {
+        margin: 20px 0;
+    }
 }
 
 // Accordion
@@ -171,6 +196,9 @@
             padding: 12px 15px;
             font-weight: 600;
             font-size: 16px;
+            img {
+                @include transition-linear;
+            }
         }
 
         &_accordion {
@@ -179,6 +207,18 @@
         }
         &_body {
             padding: 12px 15px;
+            &:not(.active) {
+                // display: none;
+            }
         }
+    }
+}
+
+// Content 5
+.content5 {
+    text-align: center;
+    @include section-gap;
+    > * {
+        margin: 20px 0;
     }
 }

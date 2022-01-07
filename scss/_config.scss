@@ -42,3 +42,7 @@ $text-black: #000;
 @mixin border-shadow {
     box-shadow: 0 0 3px #ccc;
 }
+
+@mixin section-gap {
+    margin: 40px 0;
+}

@@ -1,7 +1,13 @@
 @charset "UTF-8";
+.brands > * {
+  margin: 2rem 0;
+}
+
 .brands__header {
   text-align: center;
   color: #999;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .brands__list {
@@ -13,7 +19,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2rem 1rem;
+}
+
+.brands__list img {
+  height: 100%;
+  width: auto;
 }
 
 .brands__brand {
@@ -62,13 +72,25 @@
   height: 100%;
 }
 
+.content2 {
+  margin: 40px 0;
+}
+
 .content2__video img {
   width: 100%;
 }
 
 .content2__video__caption {
-  padding: 0 3rem;
+  padding: 0 5%;
   text-align: center;
+}
+
+.content2 > * {
+  margin: 15px 0;
+}
+
+.content3 {
+  margin: 40px 0;
 }
 
 .content3__chart img {
@@ -104,7 +126,12 @@
 }
 
 .pricing__tabtool div {
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
   padding: 10px;
+  border: 2px solid white;
+  color: #999;
+  font-size: 16px;
 }
 
 .pricing__tabtool div.active {
@@ -181,6 +208,14 @@
   margin-top: auto;
 }
 
+.pricing__tab {
+  padding-top: 42px;
+}
+
+.pricing > * {
+  margin: 20px 0;
+}
+
 .accordions_section .accordions_key {
   height: 61px;
   display: -webkit-box;
@@ -197,6 +232,11 @@
   font-size: 16px;
 }
 
+.accordions_section .accordions_key img {
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+}
+
 .accordions_section .accordions_accordion {
   -webkit-box-shadow: 0 0 3px #ccc;
           box-shadow: 0 0 3px #ccc;
@@ -205,6 +245,15 @@
 
 .accordions_section .accordions_body {
   padding: 12px 15px;
+}
+
+.content5 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.content5 > * {
+  margin: 20px 0;
 }
 
 .header {
@@ -243,6 +292,7 @@
   display: flex;
   overflow: hidden;
   height: 100%;
+  margin-left: -1px;
 }
 
 .notion-carousel__item {
@@ -281,6 +331,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 999;
 }
 
 .notion-carousel__navigator .wrapper.container {
@@ -303,10 +354,16 @@
   width: 25px;
   height: 3px;
   background-color: #999;
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
 }
 
 .notion-carousel__navigator .wrapper.container .indicator div:not(:last-child) {
   margin-right: 5px;
+}
+
+.notion-carousel__navigator .wrapper.container .indicator div.active {
+  background-color: #0065f2;
 }
 
 .notion-carousel__navigator .wrapper.container .buttons {
@@ -314,7 +371,12 @@
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-gap: 3px;
+  grid-gap: 10px;
+}
+
+.notion-carousel__navigator .wrapper.container .buttons img {
+  height: 30px;
+  width: 30px;
 }
 
 .footer {
@@ -333,7 +395,7 @@
           flex-flow: column;
 }
 
-.footer__row:first-child {
+.footer__row:nth-child(1) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,8 +408,26 @@
           flex-flow: column;
 }
 
-.footer__row:first-child > * {
+.footer__row:nth-child(1) > * {
   margin: 22px 0;
+}
+
+.footer__logo {
+  height: 24px;
+  width: auto;
+}
+
+.footer__social-icons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 22px;
+}
+
+.footer__social-icons img {
+  height: 24px;
+  width: 24px;
 }
 
 .footer__nav ul {
@@ -356,17 +436,17 @@
 }
 
 .footer__nav ul li {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .footer__nav ul a {
   color: #000;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.footer__row:last-child {
+.footer__row:nth-child(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -379,10 +459,13 @@
           align-items: center;
 }
 
-.footer__row:last-child span, .footer__row:last-child a {
+.footer__row:nth-child(2) span,
+.footer__row:nth-child(2) a {
   display: block;
   color: #999;
   margin: 20px 0;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 * {
@@ -407,6 +490,7 @@ a {
   text-decoration: none;
   color: #0065f2;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .action-button {
