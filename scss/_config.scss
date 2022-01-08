@@ -22,19 +22,19 @@ $text-black: #000;
 }
 
 @mixin media-md {
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 321px) {
         @content;
     }
 }
 
 @mixin media-lg {
-    @media screen and (max-width: 1200px) {
+    @media screen and (min-width: 769px) {
         @content;
     }
 }
 
 @mixin media-xl {
-    @media screen and (max-width: 1440px) {
+    @media screen and (min-width: 1441px) {
         @content;
     }
 }
@@ -45,4 +45,14 @@ $text-black: #000;
 
 @mixin section-gap {
     margin: 40px 0;
+}
+
+@mixin double-col {
+    .content:not(.content2) {
+        flex-flow: row;
+        justify-content: space-between;
+        > div {
+            width: 50%;
+        }
+    }
 }

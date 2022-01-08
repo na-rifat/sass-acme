@@ -1,16 +1,123 @@
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     box-shadow: 0 0 3px #ccc;
-    overflow: hidden;
-    padding: 0 2rem;
-    .nav__menu{
+    overflow: visible;
+    padding: 0 20px;
+    position: relative;
+    z-index: 9999;
+
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9999;
+        background-color: white;
+        ul {
+            width: 100vw;
+            height: calc(100vh - 60px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            list-style-type: none;
+            li {
+                transition: 0.3s all ease-in-out;
+                transform: translateX(100vw);
+                margin: 10px 0;
+
+                a {
+                    color: $text-black;
+                }
+                &.open {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+    &__action-button div {
         display: none;
     }
-    &__action-button span{
-        display: none;
+
+    &__logo {
+        height: 16px;
+        width: auto;
+    }
+}
+
+@include media-sm {
+    @for $i from 1 through 5 {
+        .nav__menu li:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.05s !important;
+        }
+    }
+}
+@include media-md {
+    @for $i from 1 through 5 {
+        .nav__menu li:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.05s !important;
+        }
+    }
+}
+
+@include media-lg {
+    .header {
+        padding: 0 40px;
+        .nav__toggler {
+            display: none;
+        }
+        &__cols {
+            width: 33.33%;
+            display: flex;
+            align-items: center;
+            &:nth-child(2) {
+                justify-content: center;
+            }
+            &:nth-child(3) {
+                justify-content: flex-end;
+            }
+        }
+        &__action-button {
+            img {
+                display: none;
+            }
+            div {
+                display: block;
+            }
+        }
+        .nav__menu {
+            display: inline-block;
+            position: initial;
+            z-index: 9999;
+            transition: none;
+            background-color: transparent;
+            width: auto;
+            height: auto;
+            ul {
+                width: auto;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: row;
+                list-style-type: none;
+                li {
+                    transition: none;
+                    transform: translateX(0);
+                    a {
+                        font-size: 16px;
+                    }
+                    &.open {
+                        transform: translateX(0);
+                    }
+                    &:not(:last-child) {
+                        margin-right: 25px;
+                    }
+                }
+            }
+        }
     }
 }

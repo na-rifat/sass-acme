@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    // notionCarousel(
-    //     {
-    //         autoplay: true,
-    //         autoplayInterval: 5000
-    //     }
-    // );
+    notionCarousel(
+        {
+            autoplay: true,
+            autoplayInterval: 5000
+        }
+    );
     notionAccordion(
         {
             startIndex: 1
@@ -220,12 +220,16 @@ function notionPricingTab() {
  * @author Nura Alam Rifat
  */
 function notionToggleMenu() {
-    let toggler = $(`.toggler`);
-    let menu = $(`.top-nav`);
+    let toggler = $(`.nav__toggler`);
+    let menu = $(`.nav__menu`);
 
     toggler.on(`click`, function (e) {
         if (menu.css(`display`) == `none`) {
-            menu.slideDown(300)
+            menu.slideDown(300, function (e) {
+                menu.find('li').each(function () {
+                    $(this).addClass('open');
+                })
+            })
             $(this).find(`img`).css(
                 {
                     transition: `.3s all linear`,
@@ -233,7 +237,11 @@ function notionToggleMenu() {
                 }
             )
         } else {
-            menu.slideUp(300)
+            menu.slideUp(300, function (e) {
+                menu.find('li').each(function () {
+                    $(this).removeClass('open');
+                })
+            })
             $(this).find(`img`).css(
                 {
                     transition: `.3s all linear`,

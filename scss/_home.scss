@@ -21,6 +21,7 @@
         img {
             height: 100%;
             width: auto;
+            margin: 10px 0;
         }
     }
 
@@ -28,7 +29,21 @@
         @include flex-center;
     }
 }
+@include media-md {
+    .brands {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
 
+@include media-lg {
+    .brands {
+        &__list {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+}
 // Image frame + Content
 .content1 {
     flex-direction: column-reverse !important;
@@ -38,21 +53,43 @@
 }
 .img-frame {
     overflow: hidden;
+    min-height: 320px;
+    min-width: 290px;
+    max-width: 300px;
+    // width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     &__img1 {
-        margin-left: 56.17px;
+        // margin-left: 56.17px;
         display: inline-block;
         height: 293.96px;
         width: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
     }
     &__img2 {
-        margin-top: calc(-100% + 150px);
         width: 182.59px;
         height: 166.02px;
-        margin-bottom: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
     img {
         width: auto;
         height: 100%;
+    }
+}
+@include media-lg {
+    .content1 {
+        flex-direction: row !important;
+        .img-frame {
+            &__img2 {
+                // height: 100%;
+            }
+        }
     }
 }
 
@@ -72,6 +109,15 @@
 
     > * {
         margin: 15px 0;
+    }
+    .content__para {
+        text-align: center;
+    }
+}
+
+@include media-lg {
+    .content2 .content__para {
+        padding: 0 30%;
     }
 }
 
@@ -114,6 +160,10 @@
             border: 2px solid white;
             color: $text-secondary;
             font-size: 16px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(180, 180, 180, 0.062);
+            }
             &.active {
                 border-bottom: 2px solid $secondary-color;
                 color: $secondary-color;
@@ -131,7 +181,7 @@
     &__card {
         padding: 24px;
         margin: 20px 0;
-        height: 558px;
+        min-height: 558px;
         display: flex;
         flex-flow: column;
         @include border-shadow;
@@ -175,6 +225,7 @@
         &-action {
             margin-bottom: 0px;
             margin-top: auto;
+            width: 100% !important;
         }
     }
     &__tab {
@@ -185,8 +236,20 @@
     }
 }
 
+@include media-md {
+    .pricing {
+        &__card {
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
 // Accordion
 .accordions_section {
+    h2 {
+        text-align: center;
+    }
     .accordions {
         &_key {
             height: 61px;
@@ -204,6 +267,11 @@
         &_accordion {
             @include border-shadow;
             margin: 20px 0;
+            cursor: pointer;
+            @include transition-linear;
+            &:hover {
+                box-shadow: 0 0 8px #ccc;
+            }
         }
         &_body {
             padding: 12px 15px;
@@ -213,7 +281,15 @@
         }
     }
 }
-
+@include media-md {
+    .accordions {
+        &_accordion {
+            max-width: 730px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+}
 // Content 5
 .content5 {
     text-align: center;
@@ -222,3 +298,45 @@
         margin: 20px 0;
     }
 }
+
+@include media-lg {
+    .s-content1 {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        justify-content: center;
+        flex-flow: column;
+        padding-left: 80px;
+    }
+    .s-content2 {
+        @extend .s-content1;
+        padding-left: 0;
+    }
+    .content4 {
+        flex-direction: row-reverse !important;
+    }
+    .content__multi-content > div {
+        width: auto !important;
+    }
+
+    .pricing__tabpage.active {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+    .notion-carousel__item {
+        padding: 0 165px !important;
+    }
+    .notion-carousel__navigator{
+        padding: 20px 0 20px 165px;
+    }
+}
+
+@include media-xl {
+    .pricing__tabpage.active {
+        max-width: calc(1440px - 380px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+

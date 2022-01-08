@@ -22,8 +22,8 @@
         background-position: center right;
         background: linear-gradient(
             to right,
-            rgba(0,0,0, .9),
-            rgba(0,0,0, .4)
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.4)
         );
 
         *:nth-child(1) {
@@ -61,7 +61,7 @@
                     &:not(:last-child) {
                         margin-right: 5px;
                     }
-                    &.active{
+                    &.active {
                         background-color: $secondary-color;
                     }
                 }
@@ -71,11 +71,46 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: 10px;
-                img{
+                img {
                     height: 30px;
                     width: 30px;
                 }
+                & div {
+                    @include transition-linear;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: rgba(34, 34, 34, 0.329);
+                    }
+                }
             }
+        }
+    }
+}
+
+@include media-md {
+    .notion-carousel {
+        &__item {
+            padding: 0 20% 0 2rem;
+        }
+    }
+}
+
+@include media-lg {
+    .cover {
+        height: 633px;
+    }
+
+    .notion-carousel {
+        &__item {
+            padding: 0 40% 0 2rem;
+        }
+    }
+    .notion-carousel {
+        h1 {
+            font-size: 56px;
+        }
+        p {
+            font-size: 18px;
         }
     }
 }

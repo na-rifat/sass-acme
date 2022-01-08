@@ -11,7 +11,7 @@
         }
     }
 
-    &__logo{
+    &__logo {
         height: 24px;
         width: auto;
     }
@@ -55,6 +55,38 @@
             margin: 20px 0;
             font-weight: 400;
             font-size: 1rem;
+        }
+    }
+}
+
+@include media-lg {
+    .footer {
+        &__row:nth-child(1) {
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 165px;
+        }
+        &__social-icons {
+            order: 3;
+        }
+        &__nav ul {
+            display: flex;
+            flex-flow: row;
+            li:not(:last-child) {
+                margin-right: 20px;
+            }
+            a {
+                font-weight: 400;
+            }
+        }
+
+        &__row:nth-child(2){
+            flex-flow: row;
+            > *:not(:last-child){
+                margin-right: 20px;
+            }
         }
     }
 }
